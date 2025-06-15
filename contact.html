@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function validerFormulaire() {
+      const nom = document.getElementById("nom").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (nom === "" || email === "" || message === "") {
+        alert("Veuillez remplir tous les champs.");
+        return false;
+      }
+
+      if (!email.includes("@") || !email.includes(".")) {
+        alert("Veuillez entrer une adresse email valide.");
+        return false;
+      }
+
+      alert("Message envoyé avec succès !");
+      return true;
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Bienvenue sur mon Portfolio</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Formulaire de contact</h2>
+
+    <form onsubmit="return validerFormulaire()">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" placeholder="Votre nom">
+
+      <label for="email">E-mail :</label>
+      <input type="email" id="email" name="email" placeholder="Votre e-mail">
+
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" placeholder="Votre message..." rows="5"></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Mon Portfolio - Tous droits réservés</p>
+  </footer>
+
+</body>
+</html>
